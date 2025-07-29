@@ -45,7 +45,7 @@ def crear_modelo(filters, pool, n_classes,
 
 
 
-def full_cnn(filters , pool , df_train , epochs ,batch_size , lr):
+def full_cnn(filters , pool , df_train , epochs ,batch_size , lr , num_clases):
     """
     Train a CNN end‑to‑end on image data using a simple training loop.
 
@@ -66,7 +66,7 @@ def full_cnn(filters , pool , df_train , epochs ,batch_size , lr):
     """
     steps_per_epoch = len(df_train) // batch_size
     gen = batch_generator(df_train, batch_size=batch_size)
-    model = crear_modelo(filters, pool)
+    model = crear_modelo(filters, pool , num_clases)
 
     history = {'cost': [], 'acc': []}
     

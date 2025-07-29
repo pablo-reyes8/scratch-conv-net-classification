@@ -71,7 +71,6 @@ model = [
 ## Future Work
 - **Efficient convolutions**: implement im2col to leverage BLAS and speed up training.  
 - **Advanced regularization**: add dropout, batch‑normalization and data augmentation.  
-- **Deeper architectures**: experiment with residual blocks or attention mechanisms.  
 - **Hyperparameter tuning**: integrate learning‑rate schedulers and alternative optimizers.  
 - **Expand scope**: support regression tasks, segmentation or object detection.
 

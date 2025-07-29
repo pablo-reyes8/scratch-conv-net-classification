@@ -67,6 +67,11 @@ model = [
 
 ```
 
+## Limitations
+- Educational focus: **not optimized** for large‑scale or production use.  
+- Convolutional loops in pure Python are **slow on CPU**; no GPU acceleration supported.  
+- Scaling to larger images or deeper architectures will be prohibitively slow without vectorized/im2col implementations or a C‑backend.  
+
 
 ## Future Work
 - **Efficient convolutions**: implement im2col to leverage BLAS and speed up training.  

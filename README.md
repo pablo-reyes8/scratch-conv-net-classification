@@ -21,9 +21,9 @@ This repository delivers a complete CNN implementation **from scratch** in pure 
 | **src/layers/activations.py**        | `ReLU`, `LeakyReLU` , `Tanh` activations with backprop        |
 | **src/layers/pooling.py**            | `MaxPool2D` and pooling backprop helpers (supports AveregePool)    |
 | **src/layers/dense.py**              | `Dense` + softmax layer with Adam optimizer also `Flatten` layer for reshaping tensors     |
-| **src/model.py**                     | `crear_modelo`, `conv_net_forward`, `conv_net_backward`   , `softmaxCost`     |
-| **src/train.py**                     | `full_cnn()` training loop with nested tqdm bars              |
-| **tests/test_layers.ipynb**          | Notebook tests for each layer                                 |
+| **src/model.py**                     |  `conv_net_forward`, `conv_net_backward`   , `softmaxCost`     |
+| **src/train.py**                     | `crear_modelo` , `full_cnn()` training loop with nested tqdm bars              |
+| **tests/test_layers.ipynb**          | Notebook tests for each layer (forward+backward)                               |
 | **tests/test_data_loader.ipynb**     | Notebook tests for data loader utilities                      |
 | **tests/model_showcase.ipynb**       | Notebook demonstrating model build & one training step        |
 | **requirements.txt**                 | Dependencies: NumPy, Pillow, tqdm, pytest                     |

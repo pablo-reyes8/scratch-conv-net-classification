@@ -18,22 +18,60 @@ This repository delivers a complete CNN implementation **from scratch** in pure 
 | **full_showcase/**                   | Jupyter notebook (`cnn_full.ipynb`) with a step‑by‑step demo  |
 | **src/data_loader.py**               | Image I/O, preprocessing, batch generator                     |
 | **src/layers/conv2d.py**            | `Conv2D` layer (forward, backward, Adam)                      |
-| **src/layers/activations.py**        | `ReLU` activation with backprop                                |
-| **src/layers/pooling.py**            | `MaxPool2D` and pooling backprop helpers                      |
-| **src/layers/flatten.py**            | `Flatten` layer for reshaping tensors                         |
-| **src/layers/dense.py**              | `Dense` + softmax layer with Adam optimizer                   |
-| **src/model.py**                     | `crear_modelo`, `conv_net_forward`, `conv_net_backward`       |
+| **src/layers/activations.py**        | `ReLU`, `LeakyReLU` , `Tanh` activations with backprop        |
+| **src/layers/pooling.py**            | `MaxPool2D` and pooling backprop helpers (supports AveregePool)    |
+| **src/layers/dense.py**              | `Dense` + softmax layer with Adam optimizer also `Flatten` layer for reshaping tensors     |
+| **src/model.py**                     | `crear_modelo`, `conv_net_forward`, `conv_net_backward`   , `softmaxCost`     |
 | **src/train.py**                     | `full_cnn()` training loop with nested tqdm bars              |
 | **tests/test_layers.ipynb**          | Notebook tests for each layer                                 |
 | **tests/test_data_loader.ipynb**     | Notebook tests for data loader utilities                      |
 | **tests/model_showcase.ipynb**       | Notebook demonstrating model build & one training step        |
 | **requirements.txt**                 | Dependencies: NumPy, Pillow, tqdm, pytest                     |
 
+
+## Core Dependencies
+
+```bash
+pip install pandas numpy PIL tqdm
+```
+
+## Quickstart / Usage example with built-in function 
+
+```python
+from train import *
+
+filters = [X_batch.shape[3] , 8 , 16] # Numer of kernels per layer 
+pool = [1 , 1 ,1] # 1 for batchNorm else 0 
+batch_size = 16
+lr = 0.001
+epochs = 5
+num_clases = 12 
+model, history = full_cnn(filters , pool , train_df , 5 , batch_size , lr ,num_clases)
+```
+
+## Build a Manual Model 
+
+```python
+
+model = [
+  Conv2D(n_C_prev=3, n_C=8,  f=3, stride=1, pad=1),
+  ReLU(),
+  MaxPool2D(f=2, stride=2),
+
+  Conv2D(n_C_prev=8, n_C=16, f=3, stride=1, pad=1),
+  ReLU(),
+  MaxPool2D(f=2, stride=2),
+  
+  Flatten(),
+  Dense(n_units=12, initialization='he')] # 12 clases 
+
+```
+
+
 ## Future Work
 - **Efficient convolutions**: implement im2col to leverage BLAS and speed up training.  
 - **Advanced regularization**: add dropout, batch‑normalization and data augmentation.  
 - **Deeper architectures**: experiment with residual blocks or attention mechanisms.  
-- **GPU acceleration**: port core ops to JAX or custom CUDA kernels.  
 - **Hyperparameter tuning**: integrate learning‑rate schedulers and alternative optimizers.  
 - **Expand scope**: support regression tasks, segmentation or object detection.
 

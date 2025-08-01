@@ -3,11 +3,10 @@
 ## Project Description
 This repository delivers a complete CNN implementation **from scratch** in pure Python (NumPy + Pillow), built to classify the Plant Seedlings dataset. Every component—2D convolution, ReLU activation, max‑pooling, flattening, dense softmax layer, forward & backward passes, and an Adam optimizer—is hand‑coded without relying on TensorFlow or PyTorch. We provide unit tests and interactive Jupyter notebooks to validate functionality and demonstrate usage. The full model was not trained end‑to‑end (computational cost), but its correctness is guaranteed through rigorous testing.
 
-**This repository serves as an interactive learning platform where you can dive deep into the inner workings of convolutional neural networks and backpropagation without the abstraction of automatic‑differentiation tools. It provides a hands‑on sandbox environment to step through each algorithmic detail and experiment with custom modifications in real time. Whether you aim to reinforce theoretical concepts, validate new ideas, or simply satisfy your curiosity about how CNNs learn, this codebase offers a transparent, extendable foundation for exploration and discovery
+**This repository serves as an interactive learning platform where you can dive deep into the inner workings of convolutional neural networks and backpropagation without the abstraction of automatic‑differentiation tools. It provides a hands‑on sandbox environment to step through each algorithmic detail and experiment with custom modifications in real time. Whether you aim to reinforce theoretical concepts, validate new ideas, or simply satisfy your curiosity about how CNNs learn, this codebase offers a transparent, extendable foundation for exploration and discovery.
 
 
 **
-
 ## Key Findings
 - **Layer‑by‑layer transparency**: each layer encapsulates its own forward, backward and parameter‑update logic.  
 - **Adam optimizer integration**: per‑layer first & second moment tracking and bias correction built in.  

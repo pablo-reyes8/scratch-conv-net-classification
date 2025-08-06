@@ -1,5 +1,10 @@
 # Scratch Convolutional Neural Net for Multiple Classification 
 
+
+![Repo size](https://img.shields.io/github/repo-size/pablo-reyes8/scratch-conv-net-classification)
+![Contributors](https://img.shields.io/github/contributors/pablo-reyes8/scratch-conv-net-classification)
+![Stars](https://img.shields.io/github/stars/pablo-reyes8/scratch-conv-net-classification?style=social)
+
 ## Project Description
 This repository delivers a complete CNN implementation **from scratch** in pure Python (NumPy + Pillow), built to classify the Plant Seedlings dataset. Every component—2D convolution, ReLU activation, max‑pooling, flattening, dense softmax layer, forward & backward passes, and an Adam optimizer—is hand‑coded without relying on TensorFlow or PyTorch. We provide unit tests and interactive Jupyter notebooks to validate functionality and demonstrate usage. The full model was not trained end‑to‑end (computational cost), but its correctness is guaranteed through rigorous testing.
 
